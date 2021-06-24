@@ -8,10 +8,20 @@
     <title>App Lista de Compras</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="shopping-list">
+      <h1>{{header}}</h1>
+      <input type="text" v-model="header">
+    </div>
 
     <script src="https://unpkg.com/vue@3"></script>
     <script>
+      const app = Vue.createApp({
+        data(){
+          return {
+            header: "Vue esta listo!!!"
+          }
+        }
+      }).mount('#shopping-list');
     </script>
   </body>
 </html>
