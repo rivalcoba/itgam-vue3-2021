@@ -10,6 +10,11 @@
   <body>
     <div id="shopping-list">
       <h1>{{header}}</h1>
+      <ul>
+        <li v-for="(item, index) in items" :key="item.id">
+          {{index+1}}. {{item.label}}
+        </li>
+      </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3"></script>
@@ -17,7 +22,12 @@
       const app = Vue.createApp({
         data() {
           return {
-            header: "Aplicación de Lista de Compras"
+            header: "Aplicación de Lista de Compras",
+            items: [
+              { id: "1", label: "10 sombreros de fiesta" },
+              { id: "2", label: "2 kg de aguacate" },
+              { id: "3", label: "1 lata de frijoles" }
+            ]
           };
         }
       }).mount("#shopping-list");
